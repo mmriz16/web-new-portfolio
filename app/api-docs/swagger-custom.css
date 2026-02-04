@@ -1,0 +1,107 @@
+/* Dark Theme Overrides for Swagger UI */
+
+/* Root Container */
+.swagger-ui {
+  font-family: var(--font-manrope), sans-serif;
+  color: #e5e7eb;
+}
+
+/* Backgrounds */
+.swagger-ui .scheme-container {
+  background-color: #151618;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.swagger-ui section.models {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #151618;
+}
+
+.swagger-ui .opblock-tag {
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text Colors */
+.swagger-ui .info .title,
+.swagger-ui .info h1,
+.swagger-ui .info h2,
+.swagger-ui .info h3,
+.swagger-ui .info h4,
+.swagger-ui .info h5,
+.swagger-ui .info a {
+  color: #e5e7eb;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+.swagger-ui .opblock .opblock-summary-operation-id,
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-path__deprecated {
+  color: #e5e7eb;
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+    color: #9ca3af; /* text-gray-400 */
+}
+
+/* Operation Blocks (Methods) */
+.swagger-ui .opblock {
+  background-color: #111214;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.swagger-ui .opblock.opblock-get {
+    border-color: #61affe;
+    background: rgba(97, 175, 254, 0.1);
+}
+
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background: #61affe;
+}
+
+/* Inputs and Selects */
+.swagger-ui select {
+    background-color: #111214;
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.swagger-ui input[type=text], 
+.swagger-ui textarea {
+    background-color: #111214;
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Code Blocks */
+.swagger-ui .code, 
+.swagger-ui .highlight-code > .microlight {
+    background-color: #0b0c0e !important;
+    font-family: var(--font-jetbrains-mono), monospace !important;
+    color: #e5e7eb !important;
+}
+
+/* Buttons */
+.swagger-ui .btn {
+    box-shadow: none;
+    background-color: #111214;
+    color: #e5e7eb;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.swagger-ui .btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.swagger-ui .expand-methods svg, 
+.swagger-ui .expand-operation svg {
+    fill: #e5e7eb;
+}
+
+/* Remove default white background of the main container if it exists */
+.swagger-ui .wrapper {
+    max-width: none;
+    padding: 0;
+}

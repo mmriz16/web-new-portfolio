@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
+
+import ConvexClientProvider from "./ConvexClientProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,9 +29,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${manrope.variable} ${jetbrainsMono.variable} antialiased min-h-screen bg-[#111214] text-[#e5e7eb]`}
+        style={{
+          backgroundImage:
+            "linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
       >
-        {children}
+        <ConvexClientProvider>
+          <div className="mx-auto flex min-h-screen w-full max-w-[1248px] border-x border-[#ffffff]/10 flex-col bg-[#151618]">
+            <Navbar />
+            <main className="grow px-24 py-14">{children}</main>
+            <Footer />
+          </div>
+        </ConvexClientProvider>
       </body>
     </html>
   );

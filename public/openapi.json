@@ -1,0 +1,138 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Portfolio API",
+        "version": "1.0.0",
+        "description": "API for fetching portfolio data powered by Convex"
+    },
+    "servers": [
+        {
+            "url": "https://beloved-blackbird-913.convex.site",
+            "description": "Convex Production Server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Content",
+            "description": "Endpoints for fetching content like uses, portfolio, and projects"
+        },
+        {
+            "name": "Profile",
+            "description": "Endpoints for user profile and personal updates"
+        }
+    ],
+    "paths": {
+        "/api/uses": {
+            "get": {
+                "tags": [
+                    "Content"
+                ],
+                "summary": "Get Uses Categories and Items",
+                "responses": {
+                    "200": {
+                        "description": "List of categories with nested items",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/portfolio": {
+            "get": {
+                "tags": [
+                    "Content"
+                ],
+                "summary": "Get Portfolio Items",
+                "responses": {
+                    "200": {
+                        "description": "List of portfolio items",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/projects": {
+            "get": {
+                "tags": [
+                    "Content"
+                ],
+                "summary": "Get Personal Projects",
+                "responses": {
+                    "200": {
+                        "description": "List of personal projects",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/profile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Get User Profile",
+                "responses": {
+                    "200": {
+                        "description": "User profile data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/updates": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Get Updates",
+                "responses": {
+                    "200": {
+                        "description": "List of recent updates",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
