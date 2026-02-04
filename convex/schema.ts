@@ -7,7 +7,7 @@ export default defineSchema({
         description: v.optional(v.string()),
         icon: v.optional(v.string()),
         display_order: v.optional(v.number()),
-        supabase_id: v.optional(v.string()),
+
     }).index("by_display_order", ["display_order"]),
 
     uses_items: defineTable({
@@ -17,7 +17,7 @@ export default defineSchema({
         image_url: v.optional(v.string()),
         display_order: v.optional(v.number()),
         category_id: v.optional(v.union(v.id("uses_categories"), v.string())),
-        supabase_id: v.optional(v.string()),
+
     }).index("by_category", ["category_id"]),
 
     portfolio_items: defineTable({
@@ -25,7 +25,7 @@ export default defineSchema({
         description: v.optional(v.string()),
         image_url: v.optional(v.string()),
         display_order: v.optional(v.number()),
-        supabase_id: v.optional(v.string()),
+
         link: v.optional(v.string()),
     }).index("by_display_order", ["display_order"]),
 
@@ -35,7 +35,7 @@ export default defineSchema({
         link: v.optional(v.string()),
         image_url: v.optional(v.string()),
         display_order: v.optional(v.number()),
-        supabase_id: v.optional(v.string()),
+
     }).index("by_display_order", ["display_order"]),
 
     work_experiences: defineTable({
@@ -45,7 +45,7 @@ export default defineSchema({
         start_date: v.optional(v.string()),
         end_date: v.optional(v.string()),
         display_order: v.optional(v.number()),
-        supabase_id: v.optional(v.string()),
+
     }).index("by_start_date", ["start_date"]),
 
     profiles: defineTable({
@@ -56,13 +56,13 @@ export default defineSchema({
         title_status: v.optional(v.string()),
         resume_url: v.optional(v.string()),
         updated_at: v.optional(v.string()),
-        supabase_id: v.optional(v.string()),
+
     }),
 
     updates: defineTable({
         title: v.string(),
         description: v.optional(v.string()),
         created_at: v.optional(v.string()), // ISO string
-        supabase_id: v.optional(v.string()),
+
     }).index("by_created_at", ["created_at"]),
 });
